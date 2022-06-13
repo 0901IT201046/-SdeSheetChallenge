@@ -1,0 +1,49 @@
+#include <bits/stdc++.h> 
+/****************************************************************
+
+    Following is the class structure of the Node class:
+
+       class Node 
+        { 
+        public:
+            int data;
+            Node *next;
+            Node(int data) 
+            {
+               this->data = data;
+              this->next = NULL;
+            }
+        };
+
+*****************************************************************/
+
+Node *findMiddle(Node *head) 
+{
+    Node* temp = head;
+
+       int length = 0;
+
+       while(temp != NULL)
+       {
+
+           length = length + 1;
+
+           temp = temp -> next;
+
+       }
+
+       length = length / 2;
+
+       temp = head; 
+
+       
+
+       while(length--)
+       {
+
+           temp = temp -> next;
+
+       }
+
+       return temp;
+}
