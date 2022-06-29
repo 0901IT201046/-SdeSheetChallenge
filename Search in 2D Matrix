@@ -1,0 +1,28 @@
+#include <bits/stdc++.h> 
+#include <vector>
+
+bool findTargetInMatrix(vector < vector < int >> & matrix, int m, int n, int target) 
+{
+        int i,j;
+        int r = 0;
+        int c = n - 1;
+    
+        int z=0;
+        while(r<m && c>-1)
+        {
+            int cur = matrix[r][c];
+            if(cur == target)
+            {
+                return true;
+            }
+            if(target>cur)
+            {
+                r++;
+            }
+            else
+            {
+                c--;
+            }
+        }
+        return false;
+}
