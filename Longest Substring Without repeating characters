@@ -1,0 +1,23 @@
+#include <bits/stdc++.h> 
+int uniqueSubstrings(string input)
+{
+   int count=INT_MIN;
+    for(int i=0;i<input.size();i++)
+    {
+        unordered_map<char,int> mp;
+        int temp=0;
+        for(int j=i;j<input.size();j++)
+        {
+            mp[input[j]]++;
+            if(mp[input[j]]>1)
+            {
+                count=max(count,temp);
+                break;
+            }
+            temp++;
+        }
+        count=max(count,temp);
+    }
+    return count;
+
+}
