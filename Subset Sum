@@ -1,0 +1,20 @@
+vector<int> helper(vector<int> &up,int index,int curr_sum)
+{
+    if(index==up.size())
+    {
+        vector<int> temp;
+        temp.push_back(curr_sum);
+        return temp;
+    }
+    vector<int> left=helper(up,index+1,curr_sum+up[index]);
+    vector<int> right=helper(up,index+1,curr_sum);
+    left.insert(end(left),begin(right),end(right));
+    return left;
+}
+
+vector<int> subsetSum(vector<int> &num)
+{
+    vector<int> ans=helper(num,0,0);
+    sort(ans.begin(),ans.end());
+    return ans;
+}
