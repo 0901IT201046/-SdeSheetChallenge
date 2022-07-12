@@ -1,0 +1,25 @@
+void permute(string s, int l,int r, string &ans, int & ansLen) 
+{
+    while(l>=0 && r<s.length() && s[l]==s[r]) 
+    {
+        if(r-l+1 > ansLen) 
+        {
+            ansLen = r - l + 1;
+            ans = s.substr(l, ansLen);
+        }
+        l--; 
+        r++;
+    }
+} 
+string longestPalinSubstring(string str)
+{
+    string ans="";
+    int ansLen=0;
+    int n=str.length();
+    for(int i=0;i<n;i++) 
+    {
+        permute(str,i,i,ans,ansLen);
+        permute(str,i,i+1,ans,ansLen);
+    }
+    return ans;
+}
