@@ -1,0 +1,21 @@
+int atoi(string str) 
+{
+    int n = str.size();
+    string s="";
+    int i,f=0;
+
+    for(i=0;i<n;i++)
+    {
+        if(isdigit(str[i]))
+        {
+            f=1;
+            s.push_back(str[i]);
+        }
+    }
+    if(f==0)
+        return 0;
+    else if(str[0]=='-')
+        return -1*stoi(s);
+    
+    return stoi(s);
+}
