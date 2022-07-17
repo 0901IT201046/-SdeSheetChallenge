@@ -1,0 +1,16 @@
+bool findPattern(string p, string s)
+{
+    int n = s.size();
+    int x = p.size();
+    int i;
+    for(i=0;i<=n-x;i++)
+    {
+        string c = s.substr(i,x);
+        if(c == p)
+        {
+            return true;
+            break;
+        }
+    }
+    return false;
+}
