@@ -1,0 +1,16 @@
+vector<int> stringMatch(string &str, string &pat) 
+{
+    int n = str.size();
+    int m = pat.size();
+    int i;
+    vector<int> v;
+    for(i=0;i<n-m+1;i++)
+    {
+        string s = str.substr(i,m);
+        if(s==pat)
+        {
+            v.push_back(i);
+        }
+    }
+    return v;
+}
